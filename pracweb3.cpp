@@ -16,17 +16,18 @@ int main()
     string E;
     string S;
     string B;
-    int Sem;
+    short int Sem;
     long int N;
-    cout<<"enter enrollement number  : "<<setw(5);
+    cout<<left<<setw(32)<<"enter enrollement number"<<": ";
     cin>>E;
-    cout<<"enter student name        : "<<setw(5);
-    cin>>S;
-    cout<<"enter branch              : "<<setw(5);
+    cin.ignore();
+    cout<<left<<setw(32)<<"enter student name"<<": ";
+    getline(cin,S);
+    cout<<left<<setw(32)<<"enter branch"<<": ";
     cin>>B;
-    cout<<"enter semester            : "<<setw(5);
+    cout<<left<<setw(32)<<"enter semester"<<": ";
     cin>>Sem;
-    cout<<"enter mobile number       : "<<setw(5);
+    cout<<left<<setw(32)<<"enter mobile number"<<": ";
     cin>>N;
 
     cout<<"-------------------------------------------"<<endl;
@@ -35,38 +36,39 @@ int main()
 
     int M;
     int P;
-    int F;
+    int CPF;
 
-    cout<<"enter  mathematics marks          : "<<setw(5);
+    cout<<left<<setw(32)<<"enter  mathematics marks"<<": ";
     cin>>M;
-    cout<<"enter physics marks               : "<<setw(5);
+    cout<<left<<setw(32)<<"enter physics marks"<<": ";
     cin>>P;
-    cout<<"enter programming foundation marks: "<<setw(5);
-    cin>>F;
+    cout<<left<<setw(32)<<"enter programming foundation marks"<<": ";
+    cin>>CPF;
 
     cout<<"------------------------------------------"<<endl;
     cout<<"Academic summary"<<setw(5)<<endl;
     cout<<"---------------------------------------------"<<endl;
 
     int T;
-    T=M+P+F;
-    cout<<"total marks   : "<<setw(-5)<<T<<endl;
+    T=M+P+CPF;
+    cout<<left<<setw(32)<<"total marks"<<": "<<T<<endl;
     float A;
     A=(float)T/3;
-    cout<<"average marks : "<<setw(-5)<<A<<setprecision(4)<<endl;
-    cout<<"percentage    : "<<A<<"%"<<setprecision(4)<<endl;
+    cout<<left<<setw(32)<<"average marks"<<": "<<A<<setprecision(4)<<endl;
+    cout<<left<<setw(32)<<"percentage"<<": "<<A<<"%"<<setprecision(4)<<endl;
 
     cout<<"-------------------------------------------"<<endl;
     cout<<"student information"<<setw(5)<<endl;
     cout<<"---------------------------------------------"<<endl;
 
-    cout<<"enter enrollment number : "<<E<<endl;
-    cout<<"enter student name      : "<<S<<endl;
-    cout<<"enter branch            : "<<B<<endl;
-    cout<<"enter semester          : "<<Sem<<endl;
-    cout<<"enter mobile number     : "<<N<<endl;
-
-    cout<<"-------------------------------------------"<<endl;
+    cout<<left<<setw(32)<<"enter enrollment number"<<": "<<E<<endl;
+    cout<<left<<setw(32)<<"enter student name"<<": "<<S<<endl;
+    cout<<left<<setw(32)<<"enter branch"<<": "<<B<<endl;
+    cout<<left<<setw(32)<<"enter semester"<<": "<<Sem<<endl;
+    cout<<left<<setw(32)<<"enter mobile number"<<": "<<N<<endl;
+    cout<<endl;
+    cout<<endl;
+    cout<<"-----------------------------------------"<<endl;
     return 0;
 
 
@@ -75,4 +77,4 @@ int main()
 
 
 
-}
+
