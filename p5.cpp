@@ -5,15 +5,9 @@ int main()
 {
     cout<<"*******************************"<<endl;
     cout<<"Student record management system"<<endl;
-    cout<<"********************************"<<endl;
-
-    cout<<"software version:"<<setw(5)<<"1.1"<<endl;
-    cout<<"institute:"<<setw(10)<<"charushat university"<<endl;
-    cout<<"Academic:"<<setw(10)<<"2026-2027"<<endl;
-
-    cout<<"----------------------------------"<<endl;
-    cout<<"student registration"<<setw(5)<<endl;
-    cout<<"----------------------------------"<<endl;
+    cout<<"*******************************"<<endl;
+    cout<<endl;
+    cout<<endl;
      string E;
      string S;
      string B;
