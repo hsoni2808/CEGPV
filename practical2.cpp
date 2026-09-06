@@ -8,33 +8,33 @@ int main() // Main function //
     cout<<"*******************************"<<endl;
     cout<<endl;
     cout<<endl;
-     string E;
-     string S;
-     string B;
+     string Enroll_no;
+     string Stu_name;
+     string Branch;
      int Sem;
-     long int N;
+     long int Mobile_no;
     // Enter student details //
      cout<<"enter enrollement number:";
-     cin>>E;
+     cin>> Enroll_no;
      cout<<"enter student name:";
-     cin>>S;
+     cin>>Stu_name;
      cin.ignore();
      cout<<"enter branch:";
-     getline(cin,B);
+     getline(cin,Branch);
      cout<<"enter semester:";
      cin>>Sem;
      cout<<"enter mobile number:";
-     cin>>N;
+     cin>>Mobile_no;
 
       cout<<"----------------------------------"<<endl;
     cout<<"student information "<<setw(5)<<endl;
     cout<<"----------------------------------"<<endl;
     // print the details //
-    cout<<"Enter enrollment number:"<<E<<endl;
-     cout<<"Enter student name:"<<S<<endl;
-      cout<<"Enter branch:"<<B<<endl;
+    cout<<"Enter enrollment number:"<< Enroll_no <<endl;
+     cout<<"Enter student name:"<<Stu_name<<endl;
+      cout<<"Enter branch:"<<Branch<<endl;
        cout<<"Enter semester:"<<Sem<<endl;
-        cout<<"Enter mobile number:"<<N<<endl;
+        cout<<"Enter mobile number:"<<Mobile_no<<endl;
 
     cout<<"----------------------------------"<<endl;
         return 0;
