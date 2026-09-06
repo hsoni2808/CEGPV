@@ -1,7 +1,7 @@
-#include <iostream>
+#include <iostream> // Header file //
 #include <iomanip>
-using namespace std;
-int main()
+using namespace std; 
+int main() // Main function //
 {
     cout<<"*******************************"<<endl;
     cout<<"Student record management system"<<endl;
@@ -13,6 +13,7 @@ int main()
      string B;
      int Sem;
      long int N;
+    // Enter student details //
      cout<<"enter enrollement number:";
      cin>>E;
      cout<<"enter student name:";
@@ -28,7 +29,7 @@ int main()
       cout<<"----------------------------------"<<endl;
     cout<<"student information "<<setw(5)<<endl;
     cout<<"----------------------------------"<<endl;
-
+    // print the details //
     cout<<"Enter enrollment number:"<<E<<endl;
      cout<<"Enter student name:"<<S<<endl;
       cout<<"Enter branch:"<<B<<endl;
