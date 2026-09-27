@@ -38,7 +38,7 @@ int main()
             cout << "Enter score: ";
             cin >> S[i];
 
-            total += S[i]; // ✅ add each score to total
+            total += S[i]; // add each score to total
         }
 
         // Initialize highest and lowest with first score
@@ -72,7 +72,7 @@ int main()
 
         // Display summary
         cout << endl;
-        cout << "Total Marks : " << total << endl;   // ✅ correct total
+        cout << "Total Marks : " << total << endl;   //  correct total
         cout << "Highest Score : " << highest << endl;
         cout << "Lowest Score : " << lowest << endl;
     }
