@@ -1,119 +1,113 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
+
 int main()
 {
-    cout<<"**************************************************"<<endl;
-    cout<<"Student record management system"<<endl;
-    cout<<"**************************************************"<<endl;
-    cout<<endl;
-    cout<<endl;
-     float percentage;
-     int marks,i,n;
-     int total=0;
-     n=5;
-    cout<<left<<setw(25)<<"Enter number of subjects"<<": ";
-    cin>>n;
-    for(i=1;i<=n;i++)
+    // Display system header
+    cout << "**************************************************" << endl;
+    cout << "Student Record Management System" << endl;
+    cout << "**************************************************" << endl;
+    cout << endl;
+
+    // Variable declarations
+    float Percentage;   // Percentage of marks
+    int Marks;          // Marks for each subject
+    int i, n;           // Loop counter and number of subjects
+    int Total;          // Total marks
+
+    // Input number of subjects
+    cout << left << setw(25) << "Enter number of subjects" << ": ";
+    cin >> n;
+
+    // Input marks for each subject
+    for (i = 1; i <= n; i++)
     {
-        cout<<left<<setw(25)<<"Enter marks for subject"<<(i)<<": ";
-        cin>>marks;
-        total=total+marks;
+        cout << left << setw(25) << "Enter marks for subject " << i << ": ";
+        cin >> Marks;
+        Total = Total + Marks; // Add marks to total
     }
 
-        cout<<endl;
-        cout<<endl;
+    cout << endl;
 
-    cout<<"-------------------------------------------------"<<endl;
-        cout<<"Academic summary"<<endl;
-        cout<<"-------------------------------------------------"<<endl;
-        cout<<endl;
-        cout<<endl;
-        M:
+    // Academic summary section
+    cout << "-------------------------------------------------" << endl;
+    cout << "Academic Summary" << endl;
+    cout << "-------------------------------------------------" << endl;
 
-            cout<<left<<setw(18)<<"Total Marks"<<": "<<total;
-        if(total<0||total>500)
-        {
-            cout<<"Error: invalid output";
-            cout<<endl;
-            goto M;
-        }
-        else
-        {
-        percentage=total/5.0;
-        cin.ignore();
-        cout<<endl;
-        cout<<left<<setw(18)<<"Average marks"<<": ";
-        cout<<percentage;
-        cout<<endl;
-        cout<<left<<setw(18)<<"Total percentage"<<": ";
-        cout<<percentage;
-        cout<<"%";
-        cout<<endl;
-        cout<<endl;
+M:  // Label for validation
+    cout << left << setw(18) << "Total Marks" << ": " << Total;
 
-        cout<<"-------------------------------------------------"<<endl;
-        cout<<"Academic result"<<endl;
-        cout<<"-------------------------------------------------"<<endl;
-        cout<<endl;
-        }
-
-        if(percentage<33)
-        {
-            cout<<"Result"<<": Fail";
-        }
-        else
-        {
-            cout<<left<<setw(18)<<"Result"<<": pass";
-            cout<<endl;
-            cout<<endl;
-        }
-        if (percentage>90||percentage<100)
-        {
-            cout<<left<<setw(18)<<"grade"<<": o"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": Outstanding"<<endl;
-        }
-      else if (percentage>80||percentage<89)
-        {
-            float percentage;
-
-             cout<<left<<setw(18)<<"grade"<<": A+"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": Excellent"<<endl;
-        }
-    else if (percentage>70||percentage<79)
-        {
-         float percentage;
-            cout<<left<<setw(18)<<"grade"<<": A"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": very good"<<endl;
-        }
-        else if (percentage>60||percentage<69)
+    // Validate total marks
+    if (Total < 0 || Total > 500)
     {
-        float percentage;
-
-          cout<<left<<setw(18)<<"grade"<<": B+"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": good"<<endl;
+        cout << "Error: invalid output" << endl;
+        goto M; // Repeat if invalid
     }
-     else if (percentage>50||percentage<569)
+    else
     {
-        float percentage;
+        // Calculate percentage (assuming 5 subjects for division)
+        Percentage = Total / 5.0;
 
-          cout<<left<<setw(18)<<"grade"<<": B"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": Satisfactory"<<endl;
+        cout << endl;
+        cout << left << setw(18) << "Average marks" << ": " << Percentage << endl;
+        cout << left << setw(18) << "Total percentage" << ": " << Percentage << "%" << endl;
+        cout << endl;
+
+        // Academic result section
+        cout << "-------------------------------------------------" << endl;
+        cout << "Academic Result" << endl;
+        cout << "-------------------------------------------------" << endl;
+        cout << endl;
     }
-     else if (percentage>40||percentage<49)
+
+    // Pass/Fail result
+    if (Percentage < 33)
     {
-        float percentage;
-
-          cout<<left<<setw(18)<<"grade"<<": C"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": Needs improvment"<<endl;
+        cout << "Result: Fail" << endl;
     }
-     else
+    else
     {
-        float percentage;
-
-          cout<<left<<setw(18)<<"grade"<<": F"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": Fail"<<endl;
+        cout << left << setw(18) << "Result" << ": Pass" << endl;
+        cout << endl;
     }
+
+    // Grade and performance evaluation using AND (&&) for ranges
+    if (Percentage >= 90 && Percentage <= 100)
+    {
+        cout << left << setw(18) << "Grade" << ": O" << endl;
+        cout << left << setw(18) << "Performance" << ": Outstanding" << endl;
+    }
+    else if (Percentage >= 80 && Percentage <= 89)
+    {
+        cout << left << setw(18) << "Grade" << ": A+" << endl;
+        cout << left << setw(18) << "Performance" << ": Excellent" << endl;
+    }
+    else if (Percentage >= 70 && Percentage <= 79)
+    {
+        cout << left << setw(18) << "Grade" << ": A" << endl;
+        cout << left << setw(18) << "Performance" << ": Very Good" << endl;
+    }
+    else if (Percentage >= 60 && Percentage <= 69)
+    {
+        cout << left << setw(18) << "Grade" << ": B+" << endl;
+        cout << left << setw(18) << "Performance" << ": Good" << endl;
+    }
+    else if (Percentage >= 50 && Percentage <= 59)
+    {
+        cout << left << setw(18) << "Grade" << ": B" << endl;
+        cout << left << setw(18) << "Performance" << ": Satisfactory" << endl;
+    }
+    else if (Percentage >= 40 && Percentage <= 49)
+    {
+        cout << left << setw(18) << "Grade" << ": C" << endl;
+        cout << left << setw(18) << "Performance" << ": Needs Improvement" << endl;
+    }
+    else
+    {
+        cout << left << setw(18) << "Grade" << ": F" << endl;
+        cout << left << setw(18) << "Performance" << ": Fail" << endl;
+    }
+
+    return 0;
 }
-
-
