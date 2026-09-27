@@ -1,192 +1,179 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
+
 int main()
 {
-    int ch;
-    float percentage;
-    int Marks;
-    int M;
-    int P;
-    int CPF;
-    string E;
-    string S;
-    string B;
-    short int Sem;
-    long int N;
+    // Student details
+    string enrollmentNo;   // Enrollment number
+    string studentName;    // Student name
+    string branchName;     // Branch
+    short int semester;    // Semester
+    long int mobileNo;     // Mobile number
 
+    // Academic marks
+    int mathsMarks = 0;        // Mathematics marks
+    int physicsMarks = 0;      // Physics marks
+    int programmingMarks = 0;  // Programming foundation marks
+    int totalMarks = 0;        // Total marks
+    float percentage = 0;      // Percentage
 
-    cout<<"***********************************************"<<endl;
-    cout<<"student record management system"<<endl;
-    cout<<"***********************************************"<<endl;
-    cout<<endl;
-    cout<<endl;
-    cout<<"----------------------Main menu-----------------"<<endl;
-    cout<<endl;
-    cout<<endl;
-M:
-    cout<<"1. Register new student"<<endl;
-    cout<<"2. Display student record"<<endl;
-    cout<<"3. Enter student marks"<<endl;
-    cout<<"4. Display academic result"<<endl;
-    cout<<"5. Exit"<<endl;
-    cout<<"Enter your choice"<<": ";
-    cin>>ch;
+    int choice; // Menu choice
 
-    if (ch<1||ch>5)
+    // Display system header
+    cout << "***********************************************" << endl;
+    cout << "Student Record Management System" << endl;
+    cout << "***********************************************" << endl;
+    cout << endl;
+
+Menu: // Label for menu loop
+    // Display menu
+    cout << "---------------------- Main Menu -----------------" << endl;
+    cout << "1. Register new student" << endl;
+    cout << "2. Display student record" << endl;
+    cout << "3. Enter student marks" << endl;
+    cout << "4. Display academic result" << endl;
+    cout << "5. Exit" << endl;
+    cout << "Enter your choice: ";
+    cin >> choice;
+
+    if (choice < 1 || choice > 5)
     {
-        cout<<"Invalid choice";
+        cout << "Invalid choice" << endl;
+        goto Menu;
     }
 
-    switch (ch)
+    switch (choice)
     {
-    case 1:
-        cout<<"-----------------------------------\n";
-        cout<<"Student Registration\n";
-        cout<<"-----------------------------------\n";
+        case 1: // Register new student
+            cout << "-----------------------------------" << endl;
+            cout << "Student Registration" << endl;
+            cout << "-----------------------------------" << endl;
 
-
-        cout<<left<<setw(34)<<"enter enrollement number"<<": ";
-        cin>>E;
-        cin.ignore();
-        cout<<left<<setw(34)<<"enter student name"<<": ";
-        getline(cin,S);
-        cout<<left<<setw(34)<<"enter branch"<<": ";
-        cin>>B;
-        cout<<left<<setw(34)<<"enter semester"<<": ";
-        cin>>Sem;
-        cout<<left<<setw(34)<<"enter mobile number"<<": ";
-        cin>>N;
-        cout<<endl;
-        cout<<"student registered succesfully"<<endl;
-        goto M;
-
-    case 2:
-
-        cout<<"-------------------------------------------"<<endl;
-        cout<<"student information"<<setw(5)<<endl;
-        cout<<"---------------------------------------------"<<endl;
-
-        cout<<left<<setw(34)<<"enter enrollment number"<<": "<<E<<endl;
-        cout<<left<<setw(34)<<"enter student name"<<": "<<S<<endl;
-        cout<<left<<setw(34)<<"enter branch"<<": "<<B<<endl;
-        cout<<left<<setw(34)<<"enter semester"<<": "<<Sem<<endl;
-        cout<<left<<setw(34)<<"enter mobile number"<<": "<<N<<endl;
-        cout<<endl;
-        cout<<endl;
-        goto M;
-
-    case 3:
-        cout<<"-------------------------------------------"<<endl;
-        cout<<"Academic information"<<setw(5)<<endl;
-        cout<<"-----------------------------------------------"<<endl;
-
-
-        cout<<left<<setw(34)<<"enter  mathematics marks"<<": ";
-        cin>>M;
-        cout<<left<<setw(34)<<"enter physics marks"<<": ";
-        cin>>P;
-        cout<<left<<setw(34)<<"enter programming foundation marks"<<": ";
-        cin>>CPF;
-        cout<<"Marks entered successfully"<<endl;
-        goto M;
-
-    case 4:
-        cout<<"-------------------------------------------------"<<endl;
-        cout<<"Academic summary"<<endl;
-        cout<<"-------------------------------------------------"<<endl;
-        cout<<endl;
-        cout<<endl;
-
-        Marks=M+P+CPF;
-        cout<<left<<setw(18)<<"Total Marks"<<": "<<Marks;
-        if(Marks<0||Marks>500)
-        {
-            cout<<"Error: invalid output";
-            cout<<endl;
-            goto M;
-        }
-        else
-        {
-            percentage=Marks/5.0;
+            cout << left << setw(34) << "Enter enrollment number" << ": ";
+            cin >> enrollmentNo;
             cin.ignore();
-            cout<<endl;
-            cout<<left<<setw(18)<<"Average marks"<<": ";
-            cout<<percentage;
-            cout<<endl;
-            cout<<left<<setw(18)<<"Total percentage"<<": ";
-            cout<<percentage;
-            cout<<"%";
-            cout<<endl;
-            cout<<endl;
+            cout << left << setw(34) << "Enter student name" << ": ";
+            getline(cin, studentName);
+            cout << left << setw(34) << "Enter branch" << ": ";
+            cin >> branchName;
+            cout << left << setw(34) << "Enter semester" << ": ";
+            cin >> semester;
+            cout << left << setw(34) << "Enter mobile number" << ": ";
+            cin >> mobileNo;
 
-            cout<<"-------------------------------------------------"<<endl;
-            cout<<"Academic result"<<endl;
-            cout<<"-------------------------------------------------"<<endl;
-            cout<<endl;
-        }
+            cout << endl << "Student registered successfully" << endl;
+            goto Menu;
 
-        if(percentage<33)
-        {
-            cout<<"Result"<<": Fail";
-        }
-        else
-        {
-            cout<<left<<setw(18)<<"Result"<<": pass";
-            cout<<endl;
-            cout<<endl;
-        }
-        if (percentage>90||percentage<100)
-        {
-            cout<<left<<setw(18)<<"grade"<<": o"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": Outstanding"<<endl;
-        }
-        else if (percentage>80||percentage<89)
-        {
-            float percentage;
+        case 2: // Display student record
+            cout << "-------------------------------------------" << endl;
+            cout << "Student Information" << endl;
+            cout << "-------------------------------------------" << endl;
 
-            cout<<left<<setw(18)<<"grade"<<": A+"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": Excellent"<<endl;
-        }
-        else if (percentage>70||percentage<79)
-        {
-            float percentage;
-            cout<<left<<setw(18)<<"grade"<<": A"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": very good"<<endl;
-        }
-        else if (percentage>60||percentage<69)
-        {
-            float percentage;
+            cout << left << setw(34) << "Enrollment number" << ": " << enrollmentNo << endl;
+            cout << left << setw(34) << "Student name" << ": " << studentName << endl;
+            cout << left << setw(34) << "Branch" << ": " << branchName << endl;
+            cout << left << setw(34) << "Semester" << ": " << semester << endl;
+            cout << left << setw(34) << "Mobile number" << ": " << mobileNo << endl;
+            cout << endl;
+            goto Menu;
 
-            cout<<left<<setw(18)<<"grade"<<": B+"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": good"<<endl;
-        }
-        else if (percentage>50||percentage<569)
-        {
-            float percentage;
+        case 3: // Enter student marks
+            cout << "-------------------------------------------" << endl;
+            cout << "Academic Information" << endl;
+            cout << "-------------------------------------------" << endl;
 
-            cout<<left<<setw(18)<<"grade"<<": B"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": Satisfactory"<<endl;
-        }
-        else if (percentage>40||percentage<49)
-        {
-            float percentage;
+            cout << left << setw(34) << "Enter mathematics marks" << ": ";
+            cin >> mathsMarks;
+            cout << left << setw(34) << "Enter physics marks" << ": ";
+            cin >> physicsMarks;
+            cout << left << setw(34) << "Enter programming foundation marks" << ": ";
+            cin >> programmingMarks;
 
-            cout<<left<<setw(18)<<"grade"<<": C"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": Needs improvment"<<endl;
-        }
-        else
-        {
-            float percentage;
+            cout << "Marks entered successfully" << endl;
+            goto Menu;
 
-            cout<<left<<setw(18)<<"grade"<<": F"<<endl;
-            cout<<left<<setw(18)<<"performance"<<": Fail"<<endl;
-        }
-        goto M;
-    case 5:
-        cout<<"Exit";
+        case 4: // Display academic result
+            cout << "-------------------------------------------------" << endl;
+            cout << "Academic Summary" << endl;
+            cout << "-------------------------------------------------" << endl;
+
+            totalMarks = mathsMarks + physicsMarks + programmingMarks;
+            cout << left << setw(18) << "Total Marks" << ": " << totalMarks << endl;
+
+            if (totalMarks < 0 || totalMarks > 500)
+            {
+                cout << "Error: invalid output" << endl;
+                goto Menu;
+            }
+            else
+            {
+                percentage = totalMarks / 5.0; // Example calculation
+                cout << left << setw(18) << "Average marks" << ": " << percentage << endl;
+                cout << left << setw(18) << "Total percentage" << ": " << percentage << "%" << endl;
+                cout << endl;
+
+                cout << "-------------------------------------------------" << endl;
+                cout << "Academic Result" << endl;
+                cout << "-------------------------------------------------" << endl;
+            }
+
+            // Pass/Fail result
+            if (percentage < 33)
+            {
+                cout << "Result: Fail" << endl;
+            }
+            else
+            {
+                cout << left << setw(18) << "Result" << ": Pass" << endl;
+            }
+
+            // Grade and performance evaluation using AND (&&) for ranges
+            if (percentage >= 90 && percentage <= 100)
+            {
+                cout << left << setw(18) << "Grade" << ": O" << endl;
+                cout << left << setw(18) << "Performance" << ": Outstanding" << endl;
+            }
+            else if (percentage >= 80 && percentage <= 89)
+            {
+                cout << left << setw(18) << "Grade" << ": A+" << endl;
+                cout << left << setw(18) << "Performance" << ": Excellent" << endl;
+            }
+            else if (percentage >= 70 && percentage <= 79)
+            {
+                cout << left << setw(18) << "Grade" << ": A" << endl;
+                cout << left << setw(18) << "Performance" << ": Very Good" << endl;
+            }
+            else if (percentage >= 60 && percentage <= 69)
+            {
+                cout << left << setw(18) << "Grade" << ": B+" << endl;
+                cout << left << setw(18) << "Performance" << ": Good" << endl;
+            }
+            else if (percentage >= 50 && percentage <= 59)
+            {
+                cout << left << setw(18) << "Grade" << ": B" << endl;
+                cout << left << setw(18) << "Performance" << ": Satisfactory" << endl;
+            }
+            else if (percentage >= 40 && percentage <= 49)
+            {
+                cout << left << setw(18) << "Grade" << ": C" << endl;
+                cout << left << setw(18) << "Performance" << ": Needs Improvement" << endl;
+            }
+            else
+            {
+                cout << left << setw(18) << "Grade" << ": F" << endl;
+                cout << left << setw(18) << "Performance" << ": Fail" << endl;
+            }
+            goto Menu;
+
+        case 5: // Exit program
+            cout << "Exit" << endl;
+            break;
     }
+
+    return 0;
 }
+
 
 
 
