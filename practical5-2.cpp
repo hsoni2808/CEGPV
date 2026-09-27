@@ -1,54 +1,63 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
+
 int main()
 {
-    //declare the vairable//
-    char  Choice;
-    string E;
-    string S;
-    string B;
-    short int Sem;
-    long int M;
-    char N,n;
-    //start the student registration//
+    // Declare variables for student details
+    char Choice;             // User choice for continuing registration
+    string Enroll_no;        // Enrollment number
+    string Stu_name;         // Student name
+    string Branch;           // Branch name
+    short int Semester;      // Semester number
+    long int Mobile_no;      // Mobile number
 
-    cout<<"*******************************************"<<endl;
-    cout<<"Student record management system"<<endl;
-    cout<<"*******************************************"<<endl;
+    // Display system header
+    cout << "*******************************************" << endl;
+    cout << "Student Record Management System" << endl;
+    cout << "*******************************************" << endl;
+    cout << endl;
 
-    cout<<endl;
-    cout<<endl;
-    cout<<"Student registration"<<endl;
-    cout<<endl;
-    cout<<endl;
-    //entry loop while applied//
-    while(true)
+    // Student registration section
+    cout << "Student Registration" << endl;
+    cout << "-------------------------------------------" << endl;
+    cout << endl;
+
+    // Entry loop for multiple students
+    while (true)
     {
-        //Enter the student details//
-        cout<<left<<setw(32)<<"enter enrollement number"<<": ";
-        cin>>E;
-        cin.ignore();
-        cout<<left<<setw(32)<<"enter student name"<<": ";
-        getline(cin,S);
-        cout<<left<<setw(32)<<"enter branch"<<": ";
-        cin>>B;
-        cout<<left<<setw(32)<<"enter semester"<<": ";
-        cin>>Sem;
-        cout<<left<<setw(32)<<"enter mobile number"<<": ";
-        cin>>M;
-        cout<<"Student has registerd successfully."<<endl;
-        cout<<"Do you want to registor another student(Y/N)? ";
-        cin>>Choice;
-        cout<<"-------------------------------------";
-        cout<<endl;
-        //condition if is used//
-        if (Choice == 'N'||Choice == 'n')
-        {
-            //exit theloop//
+        // Input student details
+        cout << left << setw(32) << "Enter enrollment number" << ": ";
+        cin >> Enroll_no;
+        cin.ignore(); // Clear buffer for getline
 
-            cout<<"exit"<<endl;
+        cout << left << setw(32) << "Enter student name" << ": ";
+        getline(cin, Stu_name);
+
+        cout << left << setw(32) << "Enter branch" << ": ";
+        cin >> Branch;
+
+        cout << left << setw(32) << "Enter semester" << ": ";
+        cin >> Semester;
+
+        cout << left << setw(32) << "Enter mobile number" << ": ";
+        cin >> Mobile_no;
+
+        // Confirmation message
+        cout << "Student has registered successfully." << endl;
+
+        // Ask if user wants to register another student
+        cout << "Do you want to register another student (Y/N)? ";
+        cin >> Choice;
+        cout << "-------------------------------------------" << endl;
+
+        // Exit condition
+        if (Choice == 'N' || Choice == 'n')
+        {
+            cout << "Exiting registration..." << endl;
             break;
         }
     }
+
+    return 0;
 }
