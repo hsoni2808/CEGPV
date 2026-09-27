@@ -1,41 +1,52 @@
-#include <iostream> // Header file //
-#include <iomanip>
+#include <iostream>   // Standard input-output stream
+#include <iomanip>    // For formatted output (setw)
 using namespace std; 
-int main() // Main function //
+
+int main() 
 {
-    cout<<"*******************************"<<endl;
-    cout<<"Student record management system"<<endl;
-    cout<<"*******************************"<<endl;
-    cout<<endl;
-    cout<<endl;
-     string Enroll_no;
-     string Stu_name;
-     string Branch;
-     int Sem;
-     long int Mobile_no;
-    // Enter student details //
-     cout<<"enter enrollement number:";
-     cin>> Enroll_no;
-     cout<<"enter student name:";
-     cin>>Stu_name;
-     cin.ignore();
-     cout<<"enter branch:";
-     getline(cin,Branch);
-     cout<<"enter semester:";
-     cin>>Sem;
-     cout<<"enter mobile number:";
-     cin>>Mobile_no;
+    // Display system header
+    cout << "*******************************" << endl;
+    cout << "Student Record Management System" << endl;
+    cout << "*******************************" << endl;
+    cout << endl;
 
-      cout<<"----------------------------------"<<endl;
-    cout<<"student information "<<setw(5)<<endl;
-    cout<<"----------------------------------"<<endl;
-    // print the details //
-    cout<<"Enter enrollment number:"<< Enroll_no <<endl;
-     cout<<"Enter student name:"<<Stu_name<<endl;
-      cout<<"Enter branch:"<<Branch<<endl;
-       cout<<"Enter semester:"<<Sem<<endl;
-        cout<<"Enter mobile number:"<<Mobile_no<<endl;
+    // Declare variables for student details
+    string Enroll_no;     // Enrollment number
+    string Stu_name;      // Student name
+    string Branch;        // Branch name
+    int Sem;              // Semester number
+    long int Mobile_no;   // Mobile number
 
-    cout<<"----------------------------------"<<endl;
-        return 0;
-    }
+    // Input student details
+    cout << "Enter enrollment number: ";
+    cin >> Enroll_no;
+
+    cout << "Enter student name: ";
+    cin >> Stu_name;
+
+    cin.ignore(); // Clear input buffer before getline
+    cout << "Enter branch: ";
+    getline(cin, Branch);
+
+    cout << "Enter semester: ";
+    cin >> Sem;
+
+    cout << "Enter mobile number: ";
+    cin >> Mobile_no;
+
+    // Display student information
+    cout << "----------------------------------" << endl;
+    cout << "Student Information" << setw(5) << endl;
+    cout << "----------------------------------" << endl;
+
+    cout << "Enrollment number: " << Enroll_no << endl;
+    cout << "Student name: " << Stu_name << endl;
+    cout << "Branch: " << Branch << endl;
+    cout << "Semester: " << Sem << endl;
+    cout << "Mobile number: " << Mobile_no << endl;
+
+    cout << "----------------------------------" << endl;
+
+    return 0;
+}
+
