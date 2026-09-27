@@ -1,110 +1,123 @@
-#include <iostream>
-#include <iomanip>
+#include <iostream>   // Standard input-output stream
+#include <iomanip>    // For formatted output (setw, setprecision)
 using namespace std;
+
 int main()
 {
-    cout<<"*******************************************"<<endl;
-    cout<<"Student record management system"<<endl;
-    cout<<"*******************************************"<<endl;
+    // Display system header
+    cout << "*******************************************" << endl;
+    cout << "Student Record Management System" << endl;
+    cout << "*******************************************" << endl;
+    cout << "Software Version:" << setw(5) << "1.2" << endl;
 
-    cout<<"software version:"<<setw(5)<<"1.2"<<endl;
+    // Student registration section
+    cout << "--------------------------------------------" << endl;
+    cout << "Student Registration" << endl;
+    cout << "--------------------------------------------" << endl;
 
-    cout<<"--------------------------------------------"<<endl;
-    cout<<"student registration"<<setw(5)<<endl;
-    cout<<"--------------------------------------------"<<endl;
+    // Declare variables for student details
+    string Enroll_no;        // Enrollment number
+    string Stu_name;        // Student name
+    string Branch;        // Branch
+    short int Sem;   // Semester
+    long int Mobile_no;      // Mobile number
 
-    string E;
-    string S;
-    string B;
-    short int Sem;
-    long int N;
-    cout<<left<<setw(32)<<"enter enrollement number"<<": ";
-    cin>>E;
-    cin.ignore();
-    cout<<left<<setw(32)<<"enter student name"<<": ";
-    getline(cin,S);
-    cout<<left<<setw(32)<<"enter branch"<<": ";
-    cin>>B;
-    cout<<left<<setw(32)<<"enter semester"<<": ";
-    cin>>Sem;
-    cout<<left<<setw(32)<<"enter mobile number"<<": ";
-    cin>>N;
+    // Input student details
+    cout << left << setw(32) << "Enter enrollment number" << ": ";
+    cin >> Enroll_no;
 
-    cout<<"-------------------------------------------"<<endl;
-    cout<<"Academic information"<<setw(5)<<endl;
-    cout<<"-----------------------------------------------"<<endl;
+    cin.ignore(); // Clear buffer before getline
+    cout << left << setw(32) << "Enter student name" << ": ";
+    getline(cin, Stu_name);
 
-    int M;
-    int P;
-    int CPF;
+    cout << left << setw(32) << "Enter branch" << ": ";
+    cin >> Branch;
 
-    cout<<left<<setw(32)<<"enter  mathematics marks"<<": ";
-    cin>>M;
-    cout<<left<<setw(32)<<"enter physics marks"<<": ";
-    cin>>P;
-    cout<<left<<setw(32)<<"enter programming foundation marks"<<": ";
-    cin>>CPF;
+    cout << left << setw(32) << "Enter semester" << ": ";
+    cin >> Sem;
 
-    cout<<"------------------------------------------"<<endl;
-    cout<<"Academic summary"<<setw(5)<<endl;
-    cout<<"---------------------------------------------"<<endl;
+    cout << left << setw(32) << "Enter mobile number" << ": ";
+    cin >> Mobile_no;
 
-    int T;
-    T=M+P+CPF;
-    cout<<left<<setw(32)<<"total marks"<<": "<<T<<endl;
-    float A;
-    A=(float)T/3;
-    cout<<left<<setw(32)<<"average marks"<<": "<<A<<setprecision(4)<<endl;
-    cout<<left<<setw(32)<<"percentage"<<": "<<A<<"%"<<setprecision(4)<<endl;
+    // Academic information section
+    cout << "-------------------------------------------" << endl;
+    cout << "Academic Information" << endl;
+    cout << "-------------------------------------------" << endl;
 
-    cout<<"-------------------------------------------"<<endl;
-    cout<<"student information"<<setw(5)<<endl;
-    cout<<"---------------------------------------------"<<endl;
+    int Maths;    // Mathematics marks
+    int Phy;    // Physics marks
+    int CPF;  // Programming foundation marks
 
-    cout<<left<<setw(32)<<"enter enrollment number"<<": "<<E<<endl;
-    cout<<left<<setw(32)<<"enter student name"<<": "<<S<<endl;
-    cout<<left<<setw(32)<<"enter branch"<<": "<<B<<endl;
-    cout<<left<<setw(32)<<"enter semester"<<": "<<Sem<<endl;
-    cout<<left<<setw(32)<<"enter mobile number"<<": "<<N<<endl;
-    cout<<endl;
-    cout<<endl;
+    cout << left << setw(32) << "Enter mathematics marks" << ": ";
+    cin >> Maths;
+    cout << left << setw(32) << "Enter physics marks" << ": ";
+    cin >> Phy;
+    cout << left << setw(32) << "Enter programming foundation marks" << ": ";
+    cin >> CPF;
 
-    cout<<"The pre-increment operator of maths: "<<++M<<endl;
-    cout<<M<<endl;
-    cout<<"The post-increment operator of maths: "<<M++<<endl;
-    cout<<M<<endl;
-    cout<<"The pre-increment operator of maths: "<<--M<<endl;
-    cout<<M<<endl;
-    cout<<"The post-increment operator of maths: "<<M--<<endl;
-    cout<<M<<endl;
-    cout<<endl;
-    cout<<endl;
+    // Academic summary section
+    cout << "-------------------------------------------" << endl;
+    cout << "Academic Summary" << endl;
+    cout << "-------------------------------------------" << endl;
 
-    cout<<"The pre-increment operator of physics: "<<++P<<endl;
-    cout<<P<<endl;
-    cout<<"The post-increment operator of physics "<<P++<<endl;
-    cout<<P<<endl;
-    cout<<"The pre-increment operator of physics: "<<--P<<endl;
-    cout<<P<<endl;
-    cout<<"The post-increment operator of physics: "<<P--<<endl;
-    cout<<P<<endl;
-    cout<<endl;
-    cout<<endl;
+    int Total = Maths + Phy + CPF;              // Total marks
+    float Avg = (float)Total / 3; // Average marks
 
+    cout << left << setw(32) << "Total marks" << ": " << Total << endl;
+    cout << left << setw(32) << "Average marks" << ": " 
+         << fixed << setprecision(2) << Avg << endl;
+    cout << left << setw(32) << "Percentage" << ": " 
+         << fixed << setprecision(2) << Avg << "%" << endl;
 
-    cout<<"The Pre-Increment operator of programming foundation: "<<++CPF<<endl;
-    cout<<CPF<<endl;
+    // Student information section
+    cout << "-------------------------------------------" << endl;
+    cout << "Student Information" << endl;
+    cout << "-------------------------------------------" << endl;
 
-    cout<<"The Post-Increment operator of programming foundation: "<<CPF++<<endl;
-    cout<<CPF<<endl;
+    cout << left << setw(32) << "Enrollment number" << ": " << Enroll_no << endl;
+    cout << left << setw(32) << "Student name" << ": " << Stu_name << endl;
+    cout << left << setw(32) << "Branch" << ": " << Branch << endl;
+    cout << left << setw(32) << "Semester" << ": " << Sem << endl;
+    cout << left << setw(32) << "Mobile number" << ": " << Mobile_no<< endl;
+    cout << endl;
 
-    cout<<"The Pre-Increment operator of programming foundation: "<<--CPF<<endl;
-    cout<<CPF<<endl;
+    // Demonstrating increment/decrement operators
+    cout << "Increment/Decrement Demonstrations" << endl;
+    cout << "-------------------------------------------" << endl;
 
-    cout<<"The Post-Increment operator of programming foundation: "<<CPF--<<endl;
-    cout<<CPF<<endl;
-    cout<<endl;
-    cout<<endl;
+    // Mathematics
+    cout << "Pre-increment (Maths): " << ++Maths << endl;
+    cout << Maths << endl;
+    cout << "Post-increment (Maths): " << Maths++ << endl;
+    cout << Maths << endl;
+    cout << "Pre-decrement (Maths): " << --Maths << endl;
+    cout << Maths << endl;
+    cout << "Post-decrement (Maths): " << Maths-- << endl;
+    cout << Maths << endl;
+    cout << endl;
+
+    // Physics
+    cout << "Pre-increment (Physics): " << ++Phy << endl;
+    cout << Phy << endl;
+    cout << "Post-increment (Physics): " << Phy++ << endl;
+    cout << Phy << endl;
+    cout << "Pre-decrement (Physics): " << --Phy << endl;
+    cout << Phy << endl;
+    cout << "Post-decrement (Physics): " << Phy-- << endl;
+    cout << Phy << endl;
+    cout << endl;
+
+    // Programming Foundation
+    cout << "Pre-increment (Programming Foundation): " << ++CPF << endl;
+    cout << CPF << endl;
+    cout << "Post-increment (Programming Foundation): " << CPF++ << endl;
+    cout << CPF << endl;
+    cout << "Pre-decrement (Programming Foundation): " << --CPF << endl;
+    cout << CPF << endl;
+    cout << "Post-decrement (Programming Foundation): " << CPF-- << endl;
+    cout << CPF << endl;
+    cout << endl;
 
     return 0;
 }
+
